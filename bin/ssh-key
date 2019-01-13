@@ -52,9 +52,6 @@ ssh_key_add ()
 	${_command} 2>&1 0>&1 | sed "s|${SSH_DIR}/||g"
 	ret=${PIPESTATUS[0]}
 
-	# Remove the key immediately
-	rm -f ${ssh_key_path}
-
 	# Return the exit code from ssh-add above
 	return ${ret}
 }
